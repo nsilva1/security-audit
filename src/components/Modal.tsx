@@ -4,11 +4,14 @@ const Modal = ({
   open,
   onClose,
   content,
+  continueScan,
 }: {
   open: boolean;
   onClose: MouseEventHandler<HTMLElement>;
   content: any;
+  continueScan: MouseEventHandler<HTMLElement>;
 }) => {
+
   return (
     // backdrop
     <div
@@ -39,7 +42,7 @@ const Modal = ({
               <h2 className='card-title'>{content.title}</h2>
               <p>{content.description}</p>
               <div className='card-actions justify-end'>
-                <button className='btn btn-primary'>Continue</button>
+                <button className='btn btn-primary' onClick={(e) => {continueScan(e); onClose(e)}}>Continue</button>
               </div>
             </div>
           </div>
